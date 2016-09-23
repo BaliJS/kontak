@@ -16,18 +16,16 @@
         </style>
     </head>
     <body class="standard">
-
         <div class="container">
-
             <h1 class="title">Kontak</h1>
-
             <menu></menu>
 
-            <people people="{{ $people }}"></people>
+            @yield('content')
 
         </div>
-
-
     </body>
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+    <script>
+        window.Laravel = { csrfToken: '{{ csrf_token() }}' };    
+    </script>
 </html>

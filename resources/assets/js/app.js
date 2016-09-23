@@ -14,9 +14,8 @@ require('./bootstrap');
  */
 
 Vue.filter('leadZero', value => value <= 9 ? '0' + value : value);
-Vue.filter('avatarChar', value => value.substring(0, 1));
+Vue.filter('avatarChar', value => value.substring(0, 1).toUpperCase());
 
-Vue.component('example', require('./components/Example.vue'));
 Vue.component('menu', require('./components/Menu.vue'));
 Vue.component('people', require('./components/People.vue'));
 

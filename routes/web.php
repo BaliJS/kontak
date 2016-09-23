@@ -11,6 +11,10 @@
 |
 */
 
-Route::resource('/', 'PersonController', ['only' => [
-    'index', 'create', 'show'
+Route::get('/', function () {
+    return redirect()->route('people.index');
+});
+
+Route::resource('people', 'PersonController', ['only' => [
+    'index', 'create', 'store', 'destroy'
 ]]);

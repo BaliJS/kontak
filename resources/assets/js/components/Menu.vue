@@ -1,7 +1,7 @@
 <template>
-  <div class="menu">
-      <a class="menu-item btn btn-default" href="/create">Create</a>
-      <a class="menu-item btn btn-default" href="/">List</a>
+  <div class="btn-group">
+      <a class="menu-item btn btn-success btn-ghost" href="/people/create">Create</a>
+      <a class="menu-item btn btn-success btn-ghost" href="/people">List</a>
   </div>
 </template>
 
@@ -12,18 +12,3 @@
         }
     }
 </script>
-
-<style>
-.menu {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-.menu-item {
-    padding: 3em;
-    border-bottom: none;
-}
-
-</style>
