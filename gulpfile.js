@@ -14,9 +14,13 @@ require('laravel-elixir-vue');
  */
 
 elixir(mix => {
-  mix.styles([
-      'hack.css',
-      'standard.css'
-    ], 'public/css/app.css', 'node_modules/hack/dist')
+    mix
+    .copy('node_modules/hack/dist/hack.css', 'resources/assets/css/hack.css')
+    .copy('node_modules/hack/dist/standard.css', 'resources/assets/css/standard.css')
+    .styles([
+        'hack.css',
+        'standard.css',
+        'custom.css'
+    ])
     .webpack('app.js');
 });

@@ -13,7 +13,7 @@
                 <span class="info-item">{{ person.phone }}</span>
                 <span class="info-item">{{ person.address }}</span>
             </div>
-            <a href="#" @click.prevent="deletePerson(person.id)">Delete</a>
+            <a href="#" @click.prevent="deletePerson(person.id, $event)">Delete</a>
         </li>
 
         <div class="summary">
@@ -26,7 +26,8 @@
     export default {
         data() {
             return {
-                search: ''
+                search: '',
+                filteredLength: 0
             }
         },
         props: {
@@ -42,7 +43,7 @@
             }
         },
         methods: {
-            deletePerson(id) {
+            deletePerson(id, event) {
                 if (confirm('Are you sure ?')) {
                     this.people = this.people.filter(person => person.id != id);
                     this.$http.delete('/people/' + id)
@@ -50,7 +51,6 @@
                             console.log(response.body);
                         });
                 }
-
             }
         },
         filters: {
