@@ -6,6 +6,8 @@
 composer install
 npm install
 gulp
+php artisan migrate
+php artisan db:seed
 php artisan serve 
 ```
 
